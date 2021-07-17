@@ -19,7 +19,8 @@ export const compute = (strand1, strand2) => {
     throw new Error('left and right strands must be of equal length');
   }
 
-  const reducer = (totalHammingDistance, currentDNAProtein, index) => strand2[index] !== currentDNAProtein ? totalHammingDistance + 1 : totalHammingDistance;
+  const reducer = (totalHammingDistance, currentDNAProtein, index) =>
+    strand2[index] !== currentDNAProtein ? totalHammingDistance + 1 : totalHammingDistance;
 
   return strand1.split("").reduce((reducer), 0)
 };
